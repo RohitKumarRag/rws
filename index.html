@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Rohit Kumar">
+    <meta name="description" content="Discover unique Games, Apps, and Web creations crafted by me. 
+    RohitWebStore showcases my digital portfolio and creative projects, 
+    RohitWebStore is your gateway to innovative digital projects and portfolio.">
+    <meta name="keywords" content="RohitWebStore, Rohit Web Store, Rohit Store, Games Developer, Apps Developer.">
+    <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
+
+    <title>Rohit Web Store</title>
+
+     <link rel="shortcut icon" href="Icons/Rohit_Web_Store_Logo.png" type="image/x-icon">
+
+
+
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+        window.OneSignalDeferred = window.OneSignalDeferred || [];
+        OneSignalDeferred.push(async function (OneSignal) {
+            await OneSignal.init({
+                appId: "98e72b60-9a47-4335-9523-a4a1c9006ebf",
+            });
+        });
+    </script>
+
+
+    <link rel="stylesheet" href="indexStyle.css">
+    <script type="module" src="indexFirebaseauth.js"></script>
+</head>
+
+<body>
+    <!--=============== HEADER ===============-->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__data">
+              
+                
+                <a href="index.html" class="nav__logo">
+                       <img src="Icons/Rohit_Web_Store_Logo.png" alt="Rohit Web Store Logo" id="webLogo" class="nav__logo">
+                       <h1>Rohit Web Store</h1>
+                   </a>
+               
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <img src="Icons/MenuIconTL.svg" alt="" class="nav__burger">
+                    <img src="Icons/CloseIcon.svg" alt="" class="nav__close">
+
+                    <!-- <i class="ri-menu-line nav__burger"></i>
+                    <i class="ri-close-line nav__close"></i> -->
+                </div>
+            </div>
+
+            <!--=============== NAV MENU ===============-->
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">Home</a></li>
+
+                    <li><a App Icon href="games.html" class="nav__link">Games:</a></li>
+
+                    <!--=============== DROPDOWN 1 ===============-->
+                    <!-- <li class="dropdown__item">
+                        <div class="nav__link">
+                            Analytics <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        </div>
+                        
+                        <ul class="dropdown__menu">
+                            <li>
+                                <a  href="#" class="dropdown__link">
+                                    <i class="ri-pie-chart-line"></i> Overview
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a  href="#" class="dropdown__link">
+                                    <i class="ri-arrow-up-down-line"></i> Transactions
+                                </a>
+                            </li>
+                            
+                            =============== DROPDOWN SUBMENU ===============
+                            <li class="dropdown__subitem">
+                                <div class="dropdown__link">
+                                    <i class="ri-bar-chart-line"></i> Reports <i class="ri-add-line dropdown__add"></i>
+                                </div>
+
+                                <ul class="dropdown__submenu">
+                                    <li>
+                                        <a  href="#" class="dropdown__sublink">
+                                            <i class="ri-file-list-line"></i> Documents
+                                        </a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a  href="#" class="dropdown__sublink">
+                                            <i class="ri-cash-line"></i> Payments
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a  href="#" class="dropdown__sublink">
+                                            <i class="ri-refund-2-line"></i> Refunds
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li> -->
+
+                    <li><a  href="apps.html" class="nav__link">Apps</a></li>
+                    <li><a  href="websites.html" class="nav__link">Websites</a></li>
+
+                    <!--=============== DROPDOWN 2 ===============-->
+                    <!-- <li class="dropdown__item">
+                        <div class="nav__link">
+                            Users <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        </div>
+                        
+                        <ul class="dropdown__menu">
+                            <li>
+                                <a href="#" class="dropdown__link">
+                                    <i class="ri-user-line"></i> Profiles
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="#" class="dropdown__link">
+                                    <i class="ri-lock-line"></i> Accounts
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" class="dropdown__link">
+                                    <i class="ri-message-3-line"></i> Messages
+                                </a>
+                            </li>
+                        </ul>
+                    </li> -->
+
+                    <li><a  href="aboutUs.html" class="nav__link">About Us</a></li>
+                    <!-- <li><a href="contactus.html" class="nav__link">Contact</a></li> -->
+
+                    <!-- Div in menu bar  -->
+                    <div id="menuBarLastDiv">
+                        <div id="menuBarBtns">
+                            <button class="menuBtn" id="loginBtn" onclick="showDialog()">Login</button>
+                            <button class="menuBtn" id="regBtn" onclick="showRegDialog()">Register</button>
+                        </div>
+
+                        <div id="userInfo" style="display: none;">
+                            <!-- <img src="Icons/UserCircleIcon.svg" alt="User Info"> -->
+                            <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
+                                fill="#ffffff">
+                                <path
+                                    d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z" />
+                            </svg>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+    <br>
+    <!--------------------------Header Enad and Main COntents Start----------------->
+
+    <dialog id="userInfoDialog">
+        <img src="Icons/closeiconBlack.svg" alt="Close" class="userInfoDialogCloseBtn" onclick="closeregDialog()">
+        <hr id="UserInfoDialogHorLine">
+        <h5>Note: If Info is not Showing, then Click on Logout Button & Login Again</h5>
+        <!-- <img id="profile-pic" src="Icons/Bg.jpeg" alt="Progile Image"> -->
+
+        <!-- <p id="displayFOrLName"></p>
+        <p id="displayEmail"></p> -->
+
+        <div id="displayFOrLNameDiv"><span id="displayFOrLName">Name:</span></div>
+        <div id="displayEmailDiv"><span id="displayEmail">Email:</span></div>
+
+        <button id="logoutBtn">Logout</button>
+
+    </dialog>
+
+    <dialog id="resetPasswordDialog">
+        <img src="Icons/closeiconBlack.svg" alt="Close" class="resetPasswordDialogCloseBtn">
+        <hr id="resetPasswordDialogHorLine">
+        <h4>Reset Password</h4>
+
+        <div id="containerReset">
+            <div class="barReset"></div>
+        </div>
+
+        <div id="resetPasswordMessage" class="messageDiv" style="display:none;"></div>
+
+        <div id="resetPasswordDiv">
+            <input type="email" name="Email" id="resetPasswordEmail" placeholder="Enter Your Registered Email"
+                minlength="7" required>
+            <button id="resetPasswordBtn">Send Email</button>
+
+        </div>
+
+    </dialog>
+
+    <!-- Login dialogs -->
+    <dialog class="loginDialog">
+        <div class="innerDialogDiv">
+            <img src="Icons/closeiconBlack.svg" alt="Close" class="dialogCloseBtn" onclick="closedialog()">
+
+            <hr id="horLine">
+            <div class="loginDiv">
+                <h1>Login to RWS</h1>
+                <div id="signInMessage" class="messageDiv" style="display:none;"></div>
+
+                <div id="loading-container">
+                    <div class="loading-bar"></div>
+                </div>
+
+                <input id="loginEmail" type="email" placeholder="Enter your Email" class="textBox"> <br>
+                <input id="loginPassword" type="password" placeholder="Enter your password" class="textBox"> <br>
+                <h3 id="gotTOResetPassword"><u>Reset Password</u></h3>
+                <button type="submit" id="loginSubmit">Login</button>
+
+                <!-- <div class="loginWithGoogle">
+                    <h3>or</h3>
+                    <img src="" alt="Login With Google">
+                </div> -->
+
+                <div id="lowerDiv">
+                    <h3>Don't Have An Account?</h3>
+                    <u><a href="#" id="loginToRegBtn" onclick="loginToRegBtn()">SignUp</a></u>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Register Dialog  -->
+    <dialog class="regDialog">
+        <div class="regInnerDialogDiv">
+            <div class="regCloseBtnDiv">
+                <img src="Icons/closeiconBlack.svg" alt="Close" class="regDialogCloseBtn" onclick="closeregDialog()">
+                <hr id="regHorLine">
+            </div>
+
+            <div class="regDiv">
+                <h1>Register to RWS</h1>
+                <div id="signUpMessage" class="messageDiv" style="display:none;"></div>
+
+                <div id="loading-containerReg">
+                    <div class="loading-barReg"></div>
+                </div>
+
+                <div class="proPicDiv">
+                    <!-- <div class="proPicDivFirstDiv">
+                        <label for="profilePic">Upload Profile Pic</label>
+                        <input type="file" id="profilePic" accept="image/*">
+                    </div>
+                   <div class="proPicDivSecondDiv">
+                       <img src="Icons/CloseIcon.svg" alt="Preview profile Pic">
+
+                   </div> -->
+                </div>
+
+
+
+                <input id="regFirstName" type="text" placeholder="Enter your First Name" class="textBox"><br>
+                <input id="regLastName" type="text" placeholder="Enter your Last name" class="textBox"><br>
+                <input id="regEmail" type="email" placeholder="Enter your Email" class="textBox"> <br>
+                <input id="regPassword" type="password" placeholder="Enter your password" class="textBox"><br>
+                <button id="regSubmit" type="submit">Sign Up</button>
+
+                <!-- <div class="regWithGoogle">
+                    <h3>or</h3>
+                    <img src="" alt="SignUp With Google">
+                </div> -->
+
+                <div id="lowerRegDiv">
+                    <h3>Already Have An Account?</h3>
+                    <u><a href="#" id="regToLoginBtn" onclick="regToLoginBtn()">Login</a></u>
+                </div>
+
+            </div>
+        </div>
+    </dialog>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Close button -->
+        <span class="close">&times;</span>
+        <!-- Modal Content (The full-size image) -->
+        <img class="modal-content" id="imgPreview">
+    </div>
+
+
+    <div class="goToRegister" onclick="goToRegister()">
+        <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#000">
+            <path
+                d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z" />
+        </svg>
+        <h3>
+            New User? Register
+        </h3>
+    </div>
+
+
+    <div class="gameIcnorTtl">
+        <div class="gameIOT">
+            <img src="Icons/RG2048Logo.jpg" alt="RG2048" class="gameIcon previewImage">
+            <h2 class="gameTtl">RG2048</h2>
+        </div>
+        <div>
+            <a target="_blank" href="games.html#rg2048">Downlod</a>
+        </div>
+
+    </div>
+
+    <script src="indexScript.js"></script>
+</body>
+
+</html>

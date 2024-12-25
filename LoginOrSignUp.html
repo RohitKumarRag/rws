@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohit Web Store</title>
+    <style>
+body, #regHorLine{
+    margin: 0;
+    padding: 0;
+}
+        #regCloseBtnDiv{
+            background-color: bisque;
+           margin: 0;
+           padding: 0;
+            
+        }
+        #regDialogCloseBtn {
+            width: 40px;
+            height: 40px;
+            margin: 10px;
+            cursor: pointer;
+            background-color: #fff;
+            border-radius: 50%;
+            padding: 5px;
+
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Register Dialog  -->
+    <div id="regDialog">
+        <div id="regInnerDialogDiv">
+            <div id="regCloseBtnDiv">
+                <img src="Icons/left-chevron.png" alt="Close" id="regDialogCloseBtn" onclick="closeregDialog()">
+                <hr id="regHorLine">
+            </div>
+
+            <div id="regDiv">
+                <h1>Register to RWS</h1>
+                <div id="signUpMessage" class="messageDiv" style="display:none;"></div>
+                <input id="regFirstName" type="text" placeholder="Enter your First Name" class="textBox"><br>
+                <input id="regLastName" type="text" placeholder="Enter your Last name" class="textBox"><br>
+                <input id="regEmail" type="email" placeholder="Enter your Email" class="textBox"> <br>
+                <input id="regPassword" type="password" placeholder="Enter your password" class="textBox"><br>
+                <button id="regSubmit" type="submit">Sign Up</button>
+
+                <div id="regWithGoogle">
+                    <h3>or</h3>
+                    <img src="" alt="SignUp With Google">
+                </div>
+
+                <div id="lowerRegDiv">
+                    <h3>Already Have An Account?</h3>
+                    <u><a href="#" id="regToLoginBtn" onclick="regToLoginBtn()">Login</a></u>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Login dialogs -->
+    <div id="loginDialog" style="display: none;">
+        <div id="innerDialogDiv">
+            <img src="Icons/closeiconBlack.svg" alt="Close" id="dialogCloseBtn" onclick="closedialog()">
+
+            <hr id="horLine">
+            <div id="loginDiv">
+                <h1>Login to RWS</h1>
+                <div id="signInMessage" id="messageDiv" style="display:none;"></div>
+                <input id="loginEmail" type="email" placeholder="Enter your Email" class="textBox"> <br>
+                <input id="loginPassword" type="password" placeholder="Enter your password" class="textBox"> <br>
+                <button type="submit" id="loginSubmit">Login</button>
+
+                <div id="loginWithGoogle">
+                    <h3>or</h3>
+                    <img src="" alt="Login With Google">
+                </div>
+
+                <div id="lowerDiv">
+                    <h3>Don't Have An Account?</h3>
+                    <u><a href="#" id="loginToRegBtn" onclick="loginToRegBtn()">SignUp</a></u>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+
+    </script>
+</body>
+
+</html>

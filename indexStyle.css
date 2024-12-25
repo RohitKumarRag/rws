@@ -1,0 +1,1908 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+/*"PT Sans Narrow"*/
+
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    --header-height: 3.46rem;
+
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --black-color: hsl(29, 100%, 50%);
+    --black-color-light: hsl(220, 24%, 15%);
+    --black-color-lighten: hsl(220, 20%, 18%);
+    --white-color: #fff;
+    --body-color: hsl(220, 100%, 97%);
+
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: "Verdana", sans-serif;
+    --normal-font-size: .938rem;
+
+    /*========== Font weight ==========*/
+    --font-regular: 400;
+    --font-semi-bold: 600;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --voilet: #8400ff;
+    --light-Voilet: #e0c5f9;
+    --light-Saffron: #fcaa5e66;
+    --light-Saffron2: #f1e5d9;
+    --saffron: #ff7b00;
+    --saffron2: #ff7700;
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+
+}
+
+.messageDiv {
+    background-color: #ff7700;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    opacity: 0;
+    animation: fadeOut 7s forwards;
+
+}
+
+.goToRegister {
+    background: #ede3f7;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 10px;
+    text-align: center;
+    display: flex;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.goToRegister h3 {
+    padding-left: 5px;
+}
+
+/* userInfoDialog */
+
+#userInfoDialog,
+#resetPasswordDialog {
+    width: 60%;
+    height: 60%;
+    align-self: center;
+    justify-self: center;
+    border: 1px solid #ce067e;
+    border-radius: 8px;
+    padding: 8px;
+
+}
+
+#userInfoDialog .userInfoDialogCloseBtn,
+.resetPasswordDialogCloseBtn {
+    margin-top: 0px;
+}
+
+#UserInfoDialogHorLine,
+#resetPasswordDialogHorLine {
+    width: 100%;
+    border-color: #8400ff;
+    margin-bottom: 5px;
+}
+
+#userInfoDialog h5 {
+    margin-bottom: 16%;
+}
+
+#displayFOrLNameDiv,
+#displayEmailDiv {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    height: max-content;
+    color: #8400ff;
+    background-color: #dbb4ff;
+    margin-top: 10px;
+    border-radius: 7px;
+    align-self: center;
+    justify-self: center;
+    text-align: left;
+    align-content: center;
+    padding: 5px;
+    border: 2px solid #8400ff;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+#displayFOrLNameDiv:hover,
+#displayEmailDiv:hover {
+    background-color: #fcaa5e66;
+    border: 2px solid #ff7b00;
+}
+
+#logoutBtn {
+    cursor: pointer;
+    border-radius: 10%;
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: #e0c5f9;
+    width: 26%;
+    height: 38px;
+    margin-left: 37%;
+    margin-right: 37%;
+    border: 2px solid #8400ff;
+    font-size: 15px;
+    color: #8400ff;
+
+}
+
+#logoutBtn:hover {
+    background-color: #fcaa5e66;
+    border: 2px solid #ff7b00;
+}
+
+/* userInfoDialog */
+
+.menuBtn {
+    border: 1px solid #8400ff;
+    border-radius: 10%;
+}
+
+.menuBtn:hover {
+    background-color: #fcaa5e66;
+    border: 2px solid #ff7b00;
+}
+
+#userInfo {
+    display: flex;
+    cursor: pointer;
+}
+
+
+/* Login Dialog Box  */
+dialog {
+    transition: all .4s ease-in-out;
+}
+
+.loginDialog {
+    background: #f1e5d9;
+    border: none;
+    width: 70%;
+    height: 70%;
+    justify-self: center;
+    align-self: center;
+    scrollbar-width: none;
+    border-radius: 8px;
+    animation: .8s ease-in 0s 1 slideInLeft;
+
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.loginDialog::backdrop {
+    background-color: #e87a127a;
+}
+
+.loginDialog .dialogCloseBtn {
+    cursor: pointer;
+    height: 45px;
+    width: 45px;
+    margin-top: 10px;
+    margin-right: 10px;
+    float: right;
+}
+
+.userInfoDialogCloseBtn,
+.resetPasswordDialogCloseBtn {
+    cursor: pointer;
+    height: 45px;
+    width: 45px;
+    margin-top: 10px;
+    margin-right: 10px;
+    float: right;
+
+}
+
+.loginDialog .innerDialogDiv {
+    height: auto;
+}
+
+.loginDialog .innerDialogDiv .loginDiv {
+    width: 80%;
+    height: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+/*Login with Google*/
+.loginDiv .loginWithGoogle {
+    margin: 8px;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+}
+
+.loginDiv .loginWithGoogle img {
+    margin: 10px;
+}
+
+#lowerDiv {
+    margin-top: 7%;
+    display: flex;
+    flex-direction: row;
+}
+
+#lowerDiv h3 {
+    margin-right: 15px;
+}
+
+#lowerDiv a {
+    font-size: 20px;
+}
+
+#horLine {
+    width: 100%;
+    float: center;
+    height: 3px;
+    background-color: var(--saffron);
+
+}
+
+.loginDialog .innerDialogDiv .loginDiv .textBox {
+    margin-top: 10px;
+    width: 80%;
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid blueviolet;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.loginDialog .innerDialogDiv .loginDiv .textBox:hover {
+    background-color: #f0e1d2;
+    border: 2pX solid #f99d47;
+}
+
+.loginDiv input:focus {
+    outline: none;
+}
+
+.loginDiv input {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    color: #8400ff;
+    text-indent: 20px;
+}
+
+.loginDiv input:focus {
+    outline: none;
+}
+
+.loginDiv input::placeholder {
+    color: #8400ff;
+}
+
+
+#loginEmail {
+    margin-top: 18%;
+}
+
+#loginSubmit {
+    cursor: pointer;
+    float: center;
+    margin-top: 20px;
+    width: 70px;
+    height: 40px;
+    margin-left: 40%;
+    margin-right: 40%;
+    border-radius: 10px;
+    border: 1px solid #f99d47;
+    font-size: 25px;
+
+}
+
+#loginSubmit:hover {
+    background-color: #f0c59e;
+    border: 2px solid #ff7b00;
+}
+
+/* Register Dialog Style  */
+/* 
+.regDialog {
+    background: #f1e5d9;
+    border: none;
+    justify-self: center;
+    align-self: center;
+    scrollbar-width: none;
+    border-radius: 8px;
+    animation: .8s ease-in-out 0s 1 slideInLeft;
+
+
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+} */
+
+.regDialog {
+    background: #f1e5d9;
+    border: none;
+    width: 70%;
+    height: 70%;
+    justify-self: center;
+    align-self: center;
+    scrollbar-width: none;
+    border-radius: 8px;
+    animation: .8s ease-in 0s 1 slideInLeft;
+
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.regDialog::backdrop {
+    background-color: #e87a127a;
+}
+
+.regDialog .dialogCloseBtn {
+    cursor: pointer;
+    height: 45px;
+    width: 45px;
+    margin-top: 10px;
+    margin-right: 10px;
+    float: right;
+}
+
+.regDialog .regInnerDialogDiv {
+    height: 100%;
+}
+
+.regDialog .regInnerDialogDiv .loginDiv {
+    width: 80%;
+    height: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+/*Login with Google*/
+.regDialog .regWithGoogle {
+    margin: 8px;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+}
+
+.regDialog .regWithGoogle img {
+    margin: 10px;
+}
+
+
+
+
+
+@media screen and (min-width: 740px) {
+    .regDialog {
+        width: 60%;
+        height: 90%;
+    }
+
+    .loginDialog {
+        width: 60%;
+        height: 78%;
+    }
+
+}
+
+@media screen and (max-width: 1100px) {
+
+    #menuBarLastDiv {
+        background: #f0c59e;
+        width: 100%;
+        padding: 10px 10px 20px 20px;
+        display: flex;
+        flex-direction: column;
+        border: 5px solid #ff7b00;
+        border-radius: 10px;
+    }
+
+    .nav__menu {
+        right: 0;
+        position: absolute;
+        left: 0;
+        top: 2.5rem;
+        width: 100%;
+        height: calc(100vh - 3.5rem);
+        overflow: auto;
+        pointer-events: none;
+        opacity: 0;
+        transition: top .5s, opacity .5s;
+    }
+
+    .nav__menu::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .nav__list {
+        background-color: var(--black-color);
+        padding-top: 1rem;
+    }
+
+    #userInfo {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    #regFirstName,
+    #regLastName,
+    #regEmail,
+    #regPassword {
+        border-radius: 7px;
+        margin-top: 10px;
+
+    }
+
+    .regDiv .proPicDiv {
+        margin-top: 15px;
+        height: 100px;
+        display: flex;
+
+    }
+
+    .regDiv .proPicDiv .proPicDivFirstDiv {
+
+        width: 100px;
+        height: 90px;
+        margin-right: 3px;
+        text-align: center;
+        align-content: center;
+        border: 2px solid #8400ff;
+        border-radius: 10px;
+        background-color: #8400ff2b;
+    }
+
+    .regDiv .proPicDiv .proPicDivFirstDiv label {
+        font-size: 20px;
+        font-weight: bold;
+        color: #8400ff;
+        width: fit-content;
+
+    }
+
+    .regDiv .proPicDiv .proPicDivFirstDiv:hover {
+
+        border: 2px solid #ff7b00;
+        background-color: #f99d474e;
+
+
+    }
+
+    .regDiv .proPicDiv .proPicDivSecondDiv {
+
+        width: 49%;
+        height: 100%;
+        text-align: center;
+        align-content: center;
+    }
+
+    .regDiv .proPicDiv .proPicDivSecondDiv img {
+        border-radius: 50%;
+        border: 2px solid #000000;
+        height: 90px;
+        width: 90px;
+    }
+
+
+
+    .loginDialog {
+        width: 75%;
+        height: 75%;
+    }
+
+    .regDialog {
+        width: 80%;
+        height: 95%;
+    }
+
+
+    .menuBtn {
+        float: left;
+        font-size: 15px;
+        margin: 8px;
+        border: 2px solid #8400ff;
+        background-color: #e0c5f9;
+        border-radius: 8px;
+        color: #000;
+    }
+
+    #loginBtn {
+        height: 35px;
+        width: 70px;
+    }
+
+    #regBtn {
+        height: 35px;
+        width: 80px;
+    }
+
+    #userInfoDialog,
+    #resetPasswordDialog {
+        width: 45%;
+        height: 50%;
+        align-self: center;
+        justify-self: center;
+        border: 1px solid #ce067e;
+        border-radius: 8px;
+        padding: 8px;
+
+    }
+
+    .regDialog {
+
+        width: 60%;
+        height: 90%;
+        align-items: center;
+    }
+
+    .regDialog .regInnerDialogDiv {
+        width: 100%;
+        height: 100%;
+
+
+    }
+
+    .regDialog .regInnerDialogDiv .regCloseBtnDiv {
+        position: sticky;
+        width: inherit;
+        top: 0;
+        background: #f0e1d2;
+    }
+
+
+    #regHorLine {}
+
+    .regDialog .regInnerDialogDiv .regDiv {
+        padding: 20px;
+
+
+    }
+
+    .regDiv h1 {
+        top: 0;
+        margin-bottom: 10px;
+
+    }
+
+
+    #regFirstName,
+    #regLastName,
+    #regEmail,
+    #regPassword {
+        margin-top: 8px;
+        margin-left: 5%;
+
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    #regFirstName {
+        /* margin-top: 10px; */
+    }
+
+    #regSubmit {
+
+        align-self: center;
+    }
+
+    .regWithGoogle {
+        padding: 8px;
+        display: none;
+        visibility: hidden;
+
+
+    }
+
+    #lowerRegDiv {
+        margin-left: 7%;
+    }
+
+
+
+}
+
+@media screen and (max-width: 730px) {
+    .regDialog .regInnerDialogDiv .regDiv {
+        padding: 3px 25px 25px 25px;
+
+    }
+
+    #regFirstName,
+    #regLastName,
+    #regEmail,
+    #regPassword {
+        border-radius: 7px;
+        /* margin-top: 10px; */
+
+    }
+
+    .regDiv .proPicDiv {
+        margin: 7px;
+        padding: 8px;
+        height: 100px;
+        display: flex;
+
+    }
+
+    .regDiv .proPicDiv .proPicDivFirstDiv {
+
+        width: 100px;
+        height: 90px;
+        margin-right: 3px;
+        text-align: center;
+        align-content: center;
+        border: 2px solid #8400ff;
+        border-radius: 10px;
+        background-color: #8400ff2b;
+    }
+
+    .regDiv .proPicDiv .proPicDivFirstDiv label {
+        font-size: 20px;
+        font-weight: bold;
+        color: #8400ff;
+        width: fit-content;
+
+    }
+
+    .regDiv .proPicDiv .proPicDivFirstDiv:hover {
+
+        border: 2px solid #ff7b00;
+        background-color: #f99d474e;
+
+
+    }
+
+    .regDiv .proPicDiv .proPicDivFirstDiv label:hover {}
+
+    .regDiv .proPicDiv .proPicDivSecondDiv {
+
+        width: 49%;
+        height: 100%;
+        text-align: center;
+        align-content: center;
+    }
+
+    .regDiv .proPicDiv .proPicDivSecondDiv img {
+        border-radius: 50%;
+        border: 2px solid #000000;
+        height: 90px;
+        width: 90px;
+    }
+
+    #userInfoDialog,
+    #resetPasswordDialog {
+        width: 60%;
+        height: 50%;
+        align-self: center;
+        justify-self: center;
+        border: 1px solid #ce067e;
+        border-radius: 8px;
+        padding: 8px;
+
+    }
+
+    .regDialog {
+
+        width: 85%;
+        height: 95%;
+        align-items: center;
+    }
+
+    .regDialog .regInnerDialogDiv {
+        width: 100%;
+        height: 100%;
+
+
+    }
+
+    .regDialog .regInnerDialogDiv .regCloseBtnDiv {
+        position: sticky;
+        width: inherit;
+        top: 0;
+        background: #f0e1d2;
+    }
+
+
+    #regHorLine {}
+
+    .regDialog .regInnerDialogDiv .regDiv {
+        padding: 10px;
+
+
+    }
+
+    .regDiv h1 {
+        top: 0;
+        margin-bottom: 10px;
+
+    }
+
+
+    #regFirstName,
+    #regLastName,
+    #regEmail,
+    #regPassword {
+        margin-top: 8px;
+        margin-left: 5%;
+
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    #regFirstName {
+        /* margin-top: 10px; */
+    }
+
+    #regSubmit {
+
+        align-self: center;
+    }
+
+    .regWithGoogle {
+        padding: 8px;
+        display: none;
+        visibility: hidden;
+
+
+    }
+
+    #lowerRegDiv {
+        margin-left: 7%;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .regDialog .regInnerDialogDiv .regDiv {
+        padding: 3px 25px 25px 50px;
+
+    }
+
+    #regFirstName,
+    #regLastName,
+    #regEmail,
+    #regPassword {
+        border-radius: 7px;
+        margin-top: 10px;
+
+    }
+
+    .regDiv .proPicDiv {
+        margin: 7px;
+        padding: 8px;
+        height: 100px;
+        display: flex;
+
+    }
+
+    .regDiv .proPicDiv .proPicDivFirstDiv {
+
+        width: 100px;
+        height: 90px;
+        margin-right: 3px;
+        text-align: center;
+        align-content: center;
+        border: 2px solid #8400ff;
+        border-radius: 10px;
+        background-color: #8400ff2b;
+    }
+
+    .regDiv .proPicDiv .proPicDivFirstDiv label {
+        font-size: 20px;
+        font-weight: bold;
+        color: #8400ff;
+        width: fit-content;
+
+    }
+
+    .regDiv .proPicDiv .proPicDivFirstDiv:hover {
+
+        border: 2px solid #ff7b00;
+        background-color: #f99d474e;
+
+
+    }
+
+    .regDiv .proPicDiv .proPicDivFirstDiv label:hover {}
+
+    .regDiv .proPicDiv .proPicDivSecondDiv {
+
+        width: 49%;
+        height: 100%;
+        text-align: center;
+        align-content: center;
+    }
+
+    .regDiv .proPicDiv .proPicDivSecondDiv img {
+        border-radius: 50%;
+        border: 2px solid #000000;
+        height: 90px;
+        width: 90px;
+    }
+
+    .regDialog {
+
+        width: 90%;
+        height: 75%;
+        align-items: center;
+    }
+
+    .regDialog .regInnerDialogDiv {
+        width: 100%;
+        height: 100%;
+
+
+    }
+
+    .regDialog .regInnerDialogDiv .regCloseBtnDiv {
+        position: sticky;
+        width: inherit;
+        top: 0;
+        background: #f0e1d2;
+    }
+
+
+    #regHorLine {}
+
+    .regDialog .regInnerDialogDiv .regDiv {
+        padding: 10px;
+
+
+    }
+
+    .regDiv h1 {
+        top: 0;
+        margin-bottom: 7px;
+
+    }
+
+
+    #regFirstName,
+    #regLastName,
+    #regEmail,
+    #regPassword {
+        margin-top: 8px;
+
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    #regFirstName {
+        /* margin-top: 10px; */
+    }
+
+    #regSubmit {
+
+        align-self: center;
+    }
+
+    .regWithGoogle {
+        padding: 8px;
+        display: none;
+        visibility: hidden;
+
+
+    }
+
+    #lowerRegDiv {
+        margin-left: 7%;
+    }
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width:455px) {
+
+    #userInfoDialog,
+    #resetPasswordDialog {
+        width: 90%;
+        height: 50%;
+        border: 1px solid #ce067e;
+        border-radius: 8px;
+        padding: 8px;
+        align-self: center;
+        justify-self: center;
+
+
+    }
+
+}
+
+
+@media screen and (max-width: 340px) {
+    .container {
+        margin-inline: 1rem;
+    }
+
+    .nav__link {
+        padding-inline: 1rem;
+    }
+
+    .regDialog .regInnerDialogDiv .regDiv {
+        padding: 3px 25px 25px 0px;
+
+    }
+
+    #regFirstName,
+    #regLastName,
+    #regEmail,
+    #regPassword {
+        border-radius: 7px;
+        margin-top: 10px;
+
+    }
+
+    .regDiv .proPicDiv {
+        margin: 7px;
+        padding: 8px;
+        height: 100px;
+
+        display: flex;
+
+    }
+
+    .regDiv .proPicDiv .proPicDivFirstDiv {
+
+        width: 100px;
+        height: 90px;
+        margin-right: 3px;
+        text-align: center;
+        align-content: center;
+        border: 2px solid #8400ff;
+        border-radius: 10px;
+        background-color: #8400ff2b;
+    }
+
+    .regDiv .proPicDiv .proPicDivFirstDiv label {
+        font-size: 20px;
+        font-weight: bold;
+        color: #8400ff;
+        width: fit-content;
+
+    }
+
+    .regDiv .proPicDiv .proPicDivFirstDiv:hover {
+
+        border: 2px solid #ff7b00;
+        background-color: #f99d474e;
+
+
+    }
+
+    .regDiv .proPicDiv .proPicDivFirstDiv label:hover {}
+
+    .regDiv .proPicDiv .proPicDivSecondDiv {
+
+        width: 49%;
+        height: 100%;
+        text-align: center;
+        align-content: center;
+    }
+
+    .regDiv .proPicDiv .proPicDivSecondDiv img {
+        border-radius: 50%;
+        border: 2px solid #000000;
+        height: 90px;
+        width: 90px;
+    }
+
+}
+
+
+
+
+
+
+.regDialog::backdrop {
+    background-color: #e87a127a;
+}
+
+.regDialog .regDialogCloseBtn {
+    cursor: pointer;
+    height: 45px;
+    width: 45px;
+    float: right;
+}
+
+
+
+/*SignUp with Google*/
+.regDiv .regWithGoogle {
+    margin: 8px;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.regDiv .regWithGoogle img {
+    margin: 10px;
+}
+
+#lowerRegDiv {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: row;
+}
+
+#lowerRegDiv h3 {
+    margin-right: 15px;
+}
+
+#lowerRegDiv a {
+    font-size: 20px;
+}
+
+#regHorLine {
+    width: 100%;
+    float: center;
+    height: 3px;
+    background-color: #f99d47;
+
+}
+
+.regDialog .regInnerDialogDiv .regDiv .textBox {
+
+    width: 80%;
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid blueviolet;
+
+}
+
+.regDialog .regInnerDialogDiv .regDiv .textBox:hover {
+    background-color: #f0e1d2;
+    border: 2pX solid #f99d47;
+}
+
+.regDiv input {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    color: #8400ff;
+    text-indent: 20px;
+}
+
+.regDiv input:focus {
+    outline: none;
+}
+
+.regDiv input::placeholder {
+    color: #8400ff;
+}
+
+#profilePic {
+    display: none;
+}
+
+
+
+#regSubmit {
+    cursor: pointer;
+    float: center;
+    margin-top: 20px;
+    width: 100px;
+    height: 40px;
+    margin-left: 40%;
+    margin-right: 40%;
+    border-radius: 10px;
+    border: 1px solid #f99d47;
+    font-size: 25px;
+
+}
+
+#regSubmit:hover {
+    background-color: #f0c59e;
+    border: 2px solid #ff7b00;
+}
+
+
+/* Model  */
+
+ul {
+    list-style: none;
+    /* Color highlighting when pressed on mobile devices */
+    /*-webkit-tap-highlight-color: transparent;*/
+}
+
+a {
+    text-decoration: none;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+
+    max-width: 98%;
+    margin-inline: 1.5rem;
+}
+
+/*=============== HEADER ===============*/
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--black-color);
+    /* box-shadow: 0 2px 16px hsla(233, 100%, 50%, 0.451); */
+    /* z-index: var(--z-fixed); */
+}
+
+/*=============== NAV ===============*/
+.nav {
+    height: var(--header-height);
+}
+
+.nav__logo,
+.nav__burger,
+.nav__close {
+    color: var(--white-color);
+}
+
+.nav__data {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__logo {
+    display: inline-flex;
+    align-items: center;
+    column-gap: .25rem;
+    font-weight: var(--font-semi-bold);
+    margin-left: 10px;
+    left: 0;
+    /* Color highlighting when pressed on mobile devices */
+    /*-webkit-tap-highlight-color: transparent;*/
+}
+
+#webLogo {
+    margin-right: 5px;
+    height: 3.5rem;
+    width: 3.5rem;
+}
+
+.nav__toggle {
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+
+.nav__burger,
+.nav__close {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    inset: 0;
+    margin: auto;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: opacity .1s, transform .4s;
+}
+
+.nav__close {
+    opacity: 0;
+}
+
+/* Navigation for mobile devices */
+
+.nav__link {
+    color: var(--white-color);
+    background-color: var(--black-color);
+    font-weight: 500;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color .1s;
+}
+
+.nav__link:hover {
+    background-color: hsl(29, 94%, 63%);
+    font-size: 14px;
+    font-weight: 530;
+    color: #000000;
+    transition: font-size .2s;
+    text-transform: uppercase;
+
+}
+
+/* Show menu */
+.show-menu {
+    opacity: 1;
+    top: 3.5rem;
+    pointer-events: initial;
+}
+
+/* Show icon */
+.show-icon .nav__burger {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+.show-icon .nav__close {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+/*=============== DROPDOWN ===============*/
+.dropdown__item {
+    cursor: pointer;
+}
+
+.dropdown__arrow {
+    font-size: 1.25rem;
+    font-weight: initial;
+    transition: transform .4s;
+}
+
+.dropdown__link,
+.dropdown__sublink {
+    padding: 1.25rem 1.25rem 1.25rem 2.5rem;
+    color: var(--white-color);
+    background-color: var(--black-color-light);
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+    font-weight: var(--font-semi-bold);
+    transition: background-color .3s;
+}
+
+.dropdown__link i,
+.dropdown__sublink i {
+    font-size: 1.25rem;
+    font-weight: initial;
+}
+
+.dropdown__link:hover,
+.dropdown__sublink:hover {
+    background-color: var(--black-color);
+}
+
+.dropdown__menu,
+.dropdown__submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease-out;
+}
+
+/* Show dropdown menu & submenu */
+.dropdown__item:hover .dropdown__menu,
+.dropdown__subitem:hover>.dropdown__submenu {
+    max-height: 1000px;
+    transition: max-height .4s ease-in;
+}
+
+/* Rotate dropdown icon */
+.dropdown__item:hover .dropdown__arrow {
+    transform: rotate(180deg);
+}
+
+/*=============== DROPDOWN SUBMENU ===============*/
+.dropdown__add {
+    margin-left: auto;
+}
+
+.dropdown__sublink {
+    background-color: var(--black-color-lighten);
+}
+
+
+
+/* not imp but imp  */
+
+.gameIcnorTtl {
+    margin-left: 8px;
+    width: 85%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.gameIcnorTtl .gameIOT {
+
+    height: 7%;
+    align-self: center;
+    display: flex;
+    width: 55%;
+    align-items: center;
+    left: 0;
+
+}
+
+.gameIcnorTtl .gameIOT .gameIcon {
+    border-radius: 7%;
+    margin: 5px 0 5px 5px;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.gameIcnorTtl .gameIOT .gameTtl {
+    font-size: 18px;
+    margin-left: 10px;
+    margin: 5px;
+}
+
+@media screen and (min-width: 1102px) {
+    :root {
+        --normal-font-size: 1rem;
+    }
+
+    .container {
+        margin-inline: auto;
+    }
+
+    .nav {
+
+        height: calc(var(--header-height) + 2rem);
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav__toggle {
+        display: none;
+    }
+
+    .nav__list {
+        height: 100%;
+        display: flex;
+        column-gap: 1rem;
+
+    }
+
+    .nav__list .nav__link {
+        height: 100%;
+        margin-left: 10px;
+        justify-content: initial;
+        column-gap: .25rem;
+    }
+
+    .nav__list .nav__link:hover {
+        background-color: transparent;
+        font-size: 15px;
+        font-weight: 530;
+        color: #000000;
+        transition: font-size .08s;
+        text-transform: uppercase;
+
+    }
+
+
+    .dropdown__item,
+    .dropdown__subitem {
+        position: relative;
+    }
+
+    .dropdown__menu,
+    .dropdown__submenu {
+        max-height: initial;
+        overflow: initial;
+        position: absolute;
+        left: 0;
+        top: 6rem;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .3s, top .3s;
+    }
+
+    .dropdown__link,
+    .dropdown__sublink {
+        padding-inline: 1rem 3.5rem;
+    }
+
+    .dropdown__subitem .dropdown__link {
+        padding-inline: 1rem;
+    }
+
+    .dropdown__submenu {
+        position: absolute;
+        left: 100%;
+        top: .5rem;
+    }
+
+
+    /* Show dropdown menu */
+    .dropdown__item:hover .dropdown__menu {
+        opacity: 1;
+        top: 5.5rem;
+        pointer-events: initial;
+        transition: top .3s;
+    }
+
+    /* Show dropdown submenu */
+    .dropdown__subitem:hover>.dropdown__submenu {
+        opacity: 1;
+        top: 0;
+        pointer-events: initial;
+        transition: top .3s;
+    }
+
+
+    .loginDialog {
+        height: 85%;
+        width: 45%;
+    }
+
+
+    .header {
+        height: 5rem;
+        align-content: center;
+    }
+
+    #menuBarLastDiv {
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        width: 210px;
+        height: fit-content;
+        float: right;
+
+    }
+
+    #userInfo {
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 8px;
+        overflow: visible;
+        width: 200px;
+        height: 100%;
+        border-radius: 6px;
+        padding: 15px;
+        transition: transform 0.2s;
+        cursor: pointer;
+
+
+    }
+
+
+
+
+    #menuBarBtns .menuBtn {
+
+        font-size: 20px;
+        cursor: pointer;
+
+    }
+
+    #menuBarBtns .menuBtn:hover {
+        background-color: #f8d8ba;
+        border: 3px solid #8400ff;
+        color: #000;
+    }
+
+    #loginBtn,
+    #regBtn {
+        margin: 5px;
+        border-radius: 5px;
+        background-color: #f5adf0;
+        border: 2px solid #ce067e;
+        color: #000;
+        height: 40px;
+    }
+
+    #loginBtn {
+
+        width: 65px;
+
+    }
+
+    #regBtn {
+        width: 90px;
+    }
+
+    .regDiv .proPicDiv {
+        margin: 7px;
+        padding: 8px;
+        height: 100px;
+        display: flex;
+
+    }
+
+    /* 
+    .regInnerDialogDiv .regDiv {
+
+        padding: 0px 0px 0px 10%;
+    }
+
+    
+
+    .regDiv .proPicDiv .proPicDivFirstDiv {
+
+        width: 100px;
+        height: 90px;
+        margin-right: 3px;
+        text-align: center;
+        align-content: center;
+        border: 2px solid #8400ff;
+        border-radius: 10px;
+        background-color: #8400ff2b;
+    }
+
+    .regDiv .proPicDiv .proPicDivFirstDiv label {
+        font-size: 20px;
+        font-weight: bold;
+        color: #8400ff;
+        width: fit-content;
+
+    }
+
+    .regDiv .proPicDiv .proPicDivFirstDiv:hover {
+
+        border: 2px solid #ff7b00;
+        background-color: #f99d474e;
+
+
+    }
+
+    .regDiv .proPicDiv .proPicDivSecondDiv {
+
+        width: 49%;
+        height: 100%;
+        text-align: center;
+        align-content: center;
+    }
+
+    .regDiv .proPicDiv .proPicDivSecondDiv img {
+        border-radius: 50%;
+        border: 2px solid #000000;
+        height: 90px;
+        width: 90px;
+    }
+
+    #regFirstName,
+    #regLastName,
+    #regEmail,
+    #regPassword {
+        margin-top: 5px;
+    }
+
+    #regSubmit {
+        margin: 0px;
+        padding: 3px;
+    }
+
+    #lowerRegDiv {
+        padding: 5px;
+        margin: 0px;
+    }
+
+    #regFirstName {
+        margin-top: 0;
+        padding-top: 0;
+    } */
+
+    .regDialog {
+
+        width: 45%;
+        height: 95%;
+        align-items: center;
+    }
+
+    .regDialog .regInnerDialogDiv {
+        width: 100%;
+        height: 100%;
+
+
+    }
+
+    .regDialog .regInnerDialogDiv .regCloseBtnDiv {
+        position: sticky;
+        width: 100%;
+        top: 0;
+        background: #f0e1d2;
+    }
+
+
+    #regHorLine {}
+
+    .regDialog .regInnerDialogDiv .regDiv {
+        padding: 20px;
+
+
+    }
+
+    .regDiv h1 {
+        top: 0;
+        margin-bottom: 10px;
+
+    }
+
+
+    #regFirstName,
+    #regLastName,
+    #regEmail,
+    #regPassword {
+        margin-top: 8px;
+        margin-left: 5%;
+
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    #regFirstName {
+        /* margin-top: 10px; */
+    }
+
+    #regSubmit {
+
+        align-self: center;
+    }
+
+    .regWithGoogle {
+        padding: 8px;
+        display: none;
+        visibility: hidden;
+
+
+    }
+
+    #lowerRegDiv {
+        margin-left: 7%;
+    }
+
+    .nav__link {
+        background: none;
+    }
+
+    .userInfo--hidden {
+        transform: translateY(-200%);
+
+    }
+
+    #displayFOrLNameDiv,
+    #displayEmailDiv {
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+        height: 30px;
+        color: #8400ff;
+        background-color: #dbb4ff;
+        margin-top: 10px;
+        border-radius: 7px;
+        align-self: center;
+        justify-self: center;
+        text-align: left;
+        align-content: center;
+        padding: 5px;
+        border: 2px solid #8400ff;
+    }
+
+    #userInfoDialog,
+    #resetPasswordDialog {
+        width: 40%;
+        height: 60%;
+        align-self: center;
+        justify-self: center;
+        border: 1px solid #ce067e;
+        border-radius: 8px;
+        padding: 8px;
+
+    }
+
+    .goToRegister {
+        display: none;
+    }
+
+}
+
+#userInfo svg:hover {
+    /* fill: #952bf8; */
+    background-color: #8400ff;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+/* Loading Bar  */
+
+#loading-container,
+#loading-containerReg,
+#containerReset {
+    width: 80%;
+    /* Width of the loading area */
+    height: 5px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 10px;
+    display: none;
+}
+
+.loading-bar,
+.loading-barReg,
+.barReset {
+    width: 35%;
+    /* Width of the moving loading bar */
+    height: 100%;
+    background-color: #ff9900;
+    position: absolute;
+    left: -20%;
+    /* Start position */
+    animation: slide 1.3s linear infinite;
+    /* Infinite animation */
+}
+
+@keyframes slide {
+    0% {
+        left: -20%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+#containerReset {
+    background-color: #f8eee4;
+}
+
+
+#gotTOResetPassword {
+    margin: 5px;
+    color: var(--voilet);
+    cursor: pointer;
+    font-size: 16px;
+    float: right;
+}
+
+#gotTOResetPassword:hover {
+
+    color: var(--saffron2);
+}
+
+#resetPasswordDialog h4 {
+    font-size: 20px;
+    margin: 10px 0px 10px 10px;
+}
+
+#resetPasswordDialog #resetPasswordDiv {
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#resetPasswordDialog #resetPasswordDiv input {
+    width: 70%;
+    height: 35px;
+    border-radius: 7px;
+    outline: none;
+    text-indent: 15px;
+    border: 2px solid var(--voilet);
+    background-color: #e9d6f9;
+    color: #8400ff;
+    font-size: 15px;
+}
+
+#resetPasswordDialog #resetPasswordDiv input::placeholder {
+    color: #8400ff;
+
+}
+
+#resetPasswordDialog #resetPasswordDiv button {
+    cursor: pointer;
+    margin-top: 20px;
+    width: 30%;
+    height: 35px;
+    border-radius: 7px;
+    outline: none;
+    border: 2px solid var(--voilet);
+    background-color: #e9d6f9;
+    color: #8400ff;
+    font-size: 15px;
+}
+
+#resetPasswordDialog #resetPasswordDiv button:hover,
+#resetPasswordDialog #resetPasswordDiv input:hover {
+    border: 2px solid #ff7b00;
+    background-color: #f0e1d2;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-content: center;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 60px;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 1100px) {
+    .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 600px;
+        max-height: 600px;
+    }
+}

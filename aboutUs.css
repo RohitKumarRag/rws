@@ -1,0 +1,439 @@
+html{
+    height: 100%;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#header {
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    background:#00308F;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #0c52de;
+}
+
+#backButton {
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px 30px 10px 10px;
+    height: 50px;
+    width: 50px;
+    background: white;
+
+
+}
+
+#title {
+    margin-left: 15px;
+    font-size: 30px;
+    white-space: nowrap;
+    color: #fff;
+
+
+}
+
+#aboutUsLogo {
+    height: 50px;
+    width: 50px;
+}
+
+.webPageLogoOrTtl {
+    display: flex;
+    flex-direction: row;
+    margin: 5px 40vw 5px auto;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*Website Homepage design*/
+.pdiv {
+    margin-top: 50px;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.demoDiv {
+    background-color: #2b2bf421;
+    margin: 10px;
+    padding: 10px;
+    display: inline-flex;
+    width: 80dvw;
+    position: relative;
+    align-items: center;
+    align-self: center;
+
+    border-radius: 10px;
+    border: none;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom: 3px solid #007FFF;
+    box-shadow: 0px 3px 5px #007FFF;
+}
+
+.demoDiv a {
+    margin: 10px;
+    align-self: right;
+    position: absolute;
+    right: 50px;
+    height: 70px;
+    aspect-ratio: 1;
+}
+
+.webImg {
+    height: 100px;
+    aspect-ratio: 1;
+    margin: 5px 0px 5px 10px;
+    border-radius: 50px;
+    border: 2px solid #0000FF;
+    overflow: hidden;
+
+}
+
+
+.webHeadings {
+    margin: 20px;
+
+}
+
+.webHeading {
+    margin-bottom: 3px;
+    font-weight: bold;
+}
+
+.webDes {
+    font-weight: 200;
+    font-size: 15px;
+}
+
+
+.btns {
+    height: 100%;
+    width: 100%;
+    height: 70px;
+    aspect-ratio: 1;
+    border-radius: 100px;
+    border: 1px solid #1F75FE;
+
+    padding: 10px 10px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+
+
+
+
+
+.infoDiv{
+    justify-items: center;
+margin-bottom: 80px;
+
+
+}
+
+.infoIcon{
+    --size:120px;
+    height:var(--size) ;
+    width: var(--size);
+}
+.aboutTag{
+    margin-top: 20px;
+}
+
+.welTag{
+    font-weight: lighter;
+}
+.hrTag{
+    width:80%;
+    color: blue;
+}
+
+
+
+
+
+/* Page Loader */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #b770faaa;
+    transition: opacity 2s visibility 2s;
+
+}
+
+.loader--hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader::after {
+    content: "";
+    width: 80px;
+    height: 80px;
+    border: 13px solid #bc7ef7;
+    border-top-color: #8400ff;
+    border-radius: 50%;
+    animation: loading .85s ease infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+
+    .pdiv {
+        margin-top: 70px;
+        width: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .parentAnchor {}
+
+    .webImg {
+        height: 75px;
+    }
+
+    .webHeadings {
+
+        margin: auto 10px auto 10px;
+    }
+
+    .demoDiv a {
+        margin: 10px;
+        align-self: right;
+        position: absolute;
+        right: 10px;
+        height: 70px;
+        aspect-ratio: 1;
+
+    }
+    #title {
+            font-size: 18px;
+        }
+  #aboutUsLogo {
+        --logoSize: 40px;
+        height: var(--logoSize);
+        width: var(--logoSize);
+    }
+        .webPageLogoOrTtl {
+           width: auto;
+            margin: 5px 30vw 5px auto;
+            justify-content: center;
+            align-items: center;
+        }
+    
+}
+
+@media screen and (max-width: 450px) {
+
+
+    .pdiv {
+        margin-top: 70px;
+        width: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .parentAnchor {}
+
+    .webImg {
+        height: 75px;
+    }
+
+    .webHeadings {
+
+        margin: auto 10px auto 10px;
+    }
+
+    .demoDiv a {
+        margin: 10px;
+        align-self: right;
+        position: absolute;
+        right: 10px;
+        height: 70px;
+        aspect-ratio: 1;
+
+    }
+
+    #title {
+        font-size: 18px;
+    }
+
+    #aboutUsLogo {
+        --logoSize: 40px;
+        height: var(--logoSize);
+        width: var(--logoSize);
+    }
+
+    .webPageLogoOrTtl {
+        width: auto;
+        margin: 5px 10vw 5px auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+@media screen and (min-width: 720px){
+
+    .hrTag {
+            width: 30%;
+            
+        }
+
+}
+
+
+/*Footer CSS*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+}
+
+.footer {
+    margin-top: auto;
+    background-color: #052f97;
+    padding: 70px 0;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #0055ff;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-weight: 300;
+    color: #cbd9f5;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #c38df9;
+    padding-left: 8px;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(220, 222, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+    color: #24262b;
+    background-color: #c38df9;
+}
+
+/*responsive*/
+@media(max-width: 767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 574px) {
+    .footer-col {
+        width: 100%;
+    }
+}
+
+/*Footer CSS End*/

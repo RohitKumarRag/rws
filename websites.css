@@ -1,0 +1,216 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#header {
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    background: blueviolet;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #2d0057;
+}
+
+#backButton {
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px 30px 10px 10px;
+    height: 30px;
+    width: 30px;
+    background: white;
+
+
+}
+
+#title {
+    margin-left: 15px;
+    font-size: 30px;
+    white-space: nowrap;
+    color: #fff;
+
+
+}
+
+#rohitWebsitesLogo {
+    height: 50px;
+    width: 50px;
+}
+
+.webPageLogoOrTtl {
+    display: flex;
+    flex-direction: row;
+    margin: 5px 40vw 5px auto;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Page Loader */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #d0a1fc;
+    transition: opacity 2s visibility 2s;
+
+}
+
+.loader--hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader::after {
+    content: "";
+    width: 80px;
+    height: 80px;
+    border: 13px solid #af6af0;
+    border-top-color: #8400ff;
+    border-radius: 50%;
+    animation: loading .85s ease infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+
+/*Website Homepage design*/
+.pdiv {
+    margin-top: 50px;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.demoDiv {
+    background-color: #c88ffd26;
+    margin: 10px;
+    padding: 10px;
+    display: inline-flex;
+    width: 80dvw;
+    position: relative;
+    align-items: center;
+    align-self: center;
+
+    border-radius: 10px;
+    border: none;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom: 5px solid blueviolet;
+    box-shadow: 0px 3px 7px #b36bf5;
+
+}
+
+.demoDiv a {
+    margin: 10px;
+    align-self: right;
+    position: absolute;
+    right: 50px;
+    height: 70px;
+    aspect-ratio: 1;  
+}
+
+.webImg {
+    height: 100px;
+    aspect-ratio: 1;
+    margin: 5px 0px 5px 10px;
+    border-radius: 50px;
+    border: 2px solid violet;
+    overflow: hidden;
+
+}
+
+
+.webHeadings {
+    margin: 20px;
+
+}
+
+.webHeading {
+    margin-bottom: 3px;
+    font-weight: bold;
+}
+
+.webDes {
+    font-weight: 200;
+    font-size: 15px;
+}
+
+
+.btns {
+    height: 100%;
+    width: 100%;
+    height: 70px;
+    aspect-ratio: 1;
+    border-radius: 100px;
+    border: 1px solid blueviolet;
+
+    padding: 10px 10px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@media screen and (max-width: 600px) {
+  
+
+.pdiv {
+        margin-top: 70px;
+        width: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+.parentAnchor {}
+
+.webImg{
+    height: 75px;
+}
+.webHeadings{
+    
+    margin: auto 10px auto 10px;
+}
+
+.demoDiv a{
+margin: 10px;
+    align-self: right;
+    position: absolute;
+    right: 10px;
+    height: 70px;
+    aspect-ratio: 1;
+
+}
+.webHeading {
+    font-size: 16px;
+}
+
+.webDes {
+    font-size: 13px;
+}
+
+}

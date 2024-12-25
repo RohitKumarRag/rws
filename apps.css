@@ -1,0 +1,370 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#header {
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    background: #f99e48;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #be6007;
+}
+
+#backButton {
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px 30px 10px 10px;
+    height: 30px;
+    width: 30px;
+    background: white;
+
+
+}
+
+#title {
+    margin-left: 15px;
+    font-size: 30px;
+    white-space: nowrap;
+    color: #fff;
+
+
+}
+
+#rohitGamezLogo {
+    height: 50px;
+    width: 50px;
+}
+
+.gamePageLogoOrTtl {
+    display: flex;
+    flex-direction: row;
+    margin: 5px 40vw 5px auto;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Game Styles */
+
+
+.parentdiv {
+    padding: 5px;
+    margin: 10px;
+    background-color: #f9efea;
+    border-bottom: 5px solid #f99e48;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 7px;
+
+}
+
+/* Game Icon or Title Div  */
+
+.parentdiv .gameIconOrTtl {
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+
+}
+
+.parentdiv .gameIconOrTtl .gameIcon {
+    border-radius: 7%;
+    margin: 5px 0 5px 5px;
+    height: 70px;
+    width: 70px;
+}
+
+.parentdiv .gameIconOrTtl .gameTtl {
+
+    margin-left: 10px;
+    margin: 5px;
+}
+
+/* Game description */
+.parentdiv .gameDes {
+    margin-left: 5px;
+}
+
+
+/* Game Buttons  */
+.parentdiv .gameButtons {
+    margin-top: 10px;
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.parentdiv .gameButtons .gameBtn {
+    cursor: pointer;
+    margin: 5px;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 40px;
+    display: flex;
+    border-radius: 15%;
+    background-color: #f8b97f;
+    border: 2px solid #6b3503;
+    color: #fff;
+    padding: 3px;
+
+
+}
+
+.parentdiv .gameButtons .gameDowBtn {
+    cursor: pointer;
+    margin: 5px;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 50px;
+    display: flex;
+    /* border-radius: 10%; */
+    border-start-end-radius: 10%;
+    border-end-start-radius: 10%;
+    background-color: #f88a24;
+    border-bottom: 5px solid #fbc08a;
+    border-right: 4px solid #b97d44;
+    border-top: none;
+    border-left: none;
+    padding: 3px;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.parentdiv .gameButtons .gameDowBtn:hover {
+
+    border: 2px solid #ff0000;
+    border-start-end-radius: 45%;
+    border-end-start-radius: 45%;
+    border-bottom: 6px solid #fbc08a;
+    border-right: 5px solid #b97d44;
+    border-top: none;
+    border-left: none;
+
+
+
+
+}
+
+.parentdiv .gameButtons .gameDowBtn a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.parentdiv .gameButtons .DirgameDowBtn {
+    cursor: pointer;
+    margin: 5px;
+    align-items: center;
+    justify-content: center;
+    width: 105px;
+    height: 50px;
+    display: flex;
+    border-radius: 10%;
+    background-color: #f88a24;
+    border: 1px solid #6b3503;
+    padding: 3px;
+    text-decoration: none;
+
+}
+
+.parentdiv .gameButtons .DirgameDowBtn:hover {
+    text-transform: uppercase;
+    border: 2px solid #6b3503;
+    font-weight: 550;
+
+}
+
+.parentdiv .gameButtons .DirgameDowBtn a {
+    text-decoration: none;
+    color: #fff;
+    border: none;
+
+}
+
+
+/* MODAL
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: #ff7b0038;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.35s ease-in;
+
+}
+
+.modal.is-visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-dialog {
+    position: relative;
+    width: 80vw;
+    height: 80vh;
+    border-radius: 5px;
+    background: white;
+    overflow: auto;
+    cursor: default;
+}
+
+.modal-dialog>* {
+    padding: 1rem;
+}
+
+.modal-header {
+    background: #f8b97f;
+}
+
+.modal-header h1 {
+    color: #000000;
+}
+
+.modal-dialog .descDiv {
+    padding-left: 10px;
+    padding-right: 5px;
+}
+
+.modal-header {
+    height: 20px;
+    top: 0;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #6b3503;
+}
+
+.modal-header .close-modal {
+    font-weight: 700;
+    border: 1px solid #be6007;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    font-size: 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal p+p {
+    margin-top: 1rem;
+}
+
+
+
+/* ANIMATIONS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+[data-animation] .modal-dialog {
+    opacity: 0;
+    transition: all 0.5s var(--bounceEasing);
+}
+
+[data-animation].is-visible .modal-dialog {
+    opacity: 1;
+    transition-delay: 0.2s;
+}
+
+[data-animation="slideInOutDown"] .modal-dialog {
+    transform: translateY(100%);
+}
+
+[data-animation="slideInOutTop"] .modal-dialog {
+    transform: translateY(-100%);
+}
+
+[data-animation="slideInOutLeft"] .modal-dialog {
+    transform: translateX(-100%);
+}
+
+[data-animation="slideInOutRight"] .modal-dialog {
+    transform: translateX(100%);
+}
+
+[data-animation="zoomInOut"] .modal-dialog {
+    transform: scale(0.2);
+}
+
+[data-animation="rotateInOutDown"] .modal-dialog {
+    transform-origin: top left;
+    transform: rotate(-1turn);
+}
+
+[data-animation="mixInAnimations"].is-visible .modal-dialog {
+    animation: mixInAnimations 2s 0.2s linear forwards;
+}
+
+[data-animation="slideInOutDown"].is-visible .modal-dialog,
+[data-animation="slideInOutTop"].is-visible .modal-dialog,
+[data-animation="slideInOutLeft"].is-visible .modal-dialog,
+[data-animation="slideInOutRight"].is-visible .modal-dialog,
+[data-animation="zoomInOut"].is-visible .modal-dialog,
+[data-animation="rotateInOutDown"].is-visible .modal-dialog {
+    transform: none;
+}
+
+/* Page Loader */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5e8de;
+    transition: opacity 2s visibility 2s;
+
+}
+
+.loader--hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader::after {
+    content: "";
+    width: 80px;
+    height: 80px;
+    border: 13px solid #f5c9a1;
+    border-top-color: #ff7b00;
+    border-radius: 50%;
+    animation: loading .85s ease infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
